@@ -10,10 +10,40 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+  
+    <script>
+      window.onload = () => {
+        const mobileMenuIcon = document.getElementById("mobile-menu-button");
+         mobileMenuIcon.addEventListener("click", () => {
+          if(mobileMenuIcon.classList.contains("open")){
+            mobileMenuIcon.classList.remove("open");
+          }
+          else{
+            mobileMenuIcon.classList.add("open");
+
+          }
+
+        });
+
+        const trackMenuItem = document.getElementById("track-menu-item");
+        trackMenuItem.addEventListener("click", () => {
+          if( trackMenuItem.classList.contains("open")){
+            trackMenuItem.classList.remove("open");
+          }
+          else{
+            trackMenuItem.classList.add("open");
+
+          }
+
+        });
+      }
+    </script> 
+    
+  
   </head>
   <body>
     <div class="ml-[10%] mr-[10%]">
-      <header class="mt-[3%] flex items-center bg-gray-200 h-14">
+      <header class="mt-[3%] md:flex hidden  items-center bg-gray-200 h-14">
         <img class="w-10 ml-[17%]" src="Images/kenya.png" />
         <div class="font-thin">You are in</div>
         <div class="font-semibold pl-3">Kenya</div>
@@ -31,10 +61,78 @@
       <nav class="bg-gradient-to-r from-yellow-400 to-yellow-100">
         <div class="flex items-center">
           <img class="pl-5" src="Images/DHL.png" />
-          <ol class="flex ml-[30%] text-[10px]">
-            <li>Contact Us</li>
+          <div class="block ml-auto pr-4 my-auto cursor-pointer md:hidden ">
+            
+        <div id="mobile-menu-button" class="group peer ">
+          <div class="bg-zinc-200 rounded-full w-8 h-1 group-open:rotate-45 transition-all group-open:top-2 relative"></div>
+          <div class="opacity-100 group-open:opacity-0 transition-all bg-zinc-200 rounded-full w-8 h-1 mt-1"></div>
+          <div class="group-open:-rotate-45 transition-all bg-zinc-200 rounded-full w-8 h-1 mt-1 group-open:-top-2 relative"></div>
+        </div>
+      
+      
+        <div
+        class="absolute top-[62px] left-0 hidden w-full bg-white text-black  peer-open:block"
+      >
+
+    
+
+          <div id="track-menu-item" class=" group relative  h-full   cursor-pointer  hover:text-red-600 transition-colors hover:bg-white/5">  
+            <div class="p-2 font-bold text-center">
+              Track
+            <div class="hidden group-open:block">
+              
+
+              <div class="relative text-black text-center p-4  hover:text-red-600 transition-colors ease-in-out">
+                <div> Track Your Shipment</div>
+            
+
+              <div >
+                <div class="relative p-2">
+                  <input
+                    type="text"
+                    class="border border-gray-300 rounded-sm font-extralight text-[9px] p-4 placeholder-gray-400 px-12 py-3 mr-[-5%]"
+                    placeholder="Enter your tracking number(s)"
+                  />
+                  <button
+                    class="text-white text-[12px] bg-red-500 p-1 ml-[-2%] rounded-sm"
+                  >
+                    Track
+                  </button>
+                  <div class="font-thin text-[10px] mt-3 mb-3">
+                    View All Tracking FAQ's
+                    <span class="ml-3"
+                      ><i
+                        class="fa-solid fa-greater-than fa-xs text-red-600"
+                      ></i
+                    ></span>
+                  </div>
+                </div>  
+
+                </div>
+              </div>
+            </div>
+            </div>
+            
+
+
+          </div>
+          <div class="relative flex h-full items-center justify-center cursor-pointer p-2 font-bold  hover:text-red-600 transition-colors hover:bg-white/5">   All Products & Solutions</div>
+          <div class="relative flex h-full items-center justify-center cursor-pointer p-2 font-bold  hover:text-red-600 transition-colors hover:bg-white/5">   Our Divisions</div>
+          <div class="relative flex h-full items-center justify-center cursor-pointer p-2 font-bold  hover:text-red-600 transition-colors hover:bg-white/5">  Industry Sectors</div>
+          <div class="relative flex h-full items-center justify-center cursor-pointer p-2 font-bold  hover:text-red-600 transition-colors hover:bg-white/5">   INsights & Innovations</div>
+          <div class="relative flex h-full items-center justify-center cursor-pointer p-2 font-bold  hover:text-red-600 transition-colors hover:bg-white/5">   Careers</div>
+          <div class="relative flex h-full items-center justify-center cursor-pointer p-2 font-bold  hover:text-red-600 transition-colors hover:bg-white/5"> Press</div>
+          <div class="relative flex h-full items-center justify-center cursor-pointer p-2 font-bold  hover:text-red-600 transition-colors hover:bg-white/5">About Us</div>
+          <div class="relative flex h-full items-center justify-center cursor-pointer p-2 font-bold  hover:text-red-600 transition-colors hover:bg-white/5">Contact Us</div>
+         
+        
+        </div>
+        </div>
+         
+          <ol class=" md:flex hidden ml-[30%] text-[10px]">
+             <li>Contact Us</li>
             <li class="ml-3">Portal Login</li>
-            <li class="ml-3">
+            <li class="ml-3 ">
               <i class="fa-solid fa-globe"></i> <span class="ml-3">Kenya</span>
             </li>
             <li class="ml-3">
@@ -43,188 +141,340 @@
             </li>
           </ol>
         </div>
-      
-        <div class="flex items-center text-[12px] pb-3">
-         
-          <div class="whitespace-nowrap pl-5 hover:text-red-600 cursor-pointer">
+
+        <div class=" md:flex hidden items-center text-[12px] pb-3">
+          <div class="whitespace-nowrap pl-5 hover:text-red-600 cursor-pointer ">
             Track
-           <span class="ml-0.5 mr-3"><i class="fa fa-caret-down"></i></span> 
-          <div class="accordion-content hidden bg-white absolute mt-[0.5%] w-1/4 ">
-           
-             <div class=" font-bold pt-3 ml-[3%]">
-              Track Your Shipment
-            </div>
-          
-    
-            <div class="flex items-center ml-[3%] mt-5 pb-5">
-              <div class="relative">
-                <input
-                  type="text"
-                  class="border border-gray-300 rounded-sm font-extralight text-[9px] p-4 placeholder-gray-400 px-12 py-3 mr-[-5%]"
-                  placeholder="Enter your tracking number(s)"
-                />
-                <button
-                  class="text-white text-[12px] bg-red-500 p-1 ml-[-15%] rounded-sm"
-                >
-                  Track
-                </button>
-                <div class="font-thin text-[10px] mt-3 mb-3">View All Tracking FAQ's <span class="ml-3"><i class="fa-solid fa-greater-than fa-xs text-red-600"></i></span> </div>
+            <span class="ml-0.5 mr-3"><i class="fa-solid fa-greater-than fa-rotate-90 fa-xs"></i></span>
+            <div
+              class="accordion-content hidden text-black bg-white absolute mt-[0.1%] w-1/4  pl-3 pr-3 pb-3  left-[-2]  hover:text-black"
+            >
+
+         
+              <div class="font-bold pt-3 ml-[3%]">Track Your Shipment</div>
+
+              <div class="flex items-center ml-[3%] mt-5 pb-5">
+                <div class="relative">
+                  <input
+                    type="text"
+                    class="border border-gray-300 rounded-sm font-extralight text-[9px] p-4 placeholder-gray-400 px-12 py-3 mr-[-5%]"
+                    placeholder="Enter your tracking number(s)"
+                  />
+                  <button
+                    class="text-white text-[12px] bg-red-500 p-1 ml-[-15%] rounded-sm"
+                  >
+                    Track
+                  </button>
+                  <div class="font-thin text-[10px] mt-3 mb-3">
+                    View All Tracking FAQ's
+                    <span class="ml-3"
+                      ><i
+                        class="fa-solid fa-greater-than fa-xs text-red-600"
+                      ></i
+                    ></span>
+                  </div>
+                </div>
               </div>
-            
             </div>
           </div>
-    
-        </div>
-          
-        
-       
+
           <div class="hover:text-red-600 cursor-pointer">
             All products & Solutions
-            <span class="ml-0.5 mr-3">
-              <i class="fa-solid fa-caret-down"></i>
-            </span>
-            <div class="accordion-content hidden  bg-white absolute  mt-[0.5%] pl-3 pr-3 pb-3">
-              <div class="pt-3 font-bold text-[14px]">Products & Solutions Overview <span class="ml-3"><i class="fa-solid fa-greater-than fa-xs text-red-600"></i></span></div>
-              <div class=" grid grid-cols-3 gap-3">
-                <div>
-                  <div >
-                    <img src="Images/dx.jpg " class="w-32 h-32">
-                  </div>
-                 
-                  
-                  <div class =' w-1/8 bg-slate-500  h-1 mt-2 '></div>
-                  <div class="font-thin text-[10px] pt-3">Parcel & Documents Shipping
-                    <span class="ml-3"><i class="fa-solid fa-greater-than fa-xs text-red-600"></i></span>
-                  </div>
-                </div>
-                <div>
-                  <div >
-                    <img src="Images/dx.jpg " class="w-32 h-32">
-                  </div>
-                 
-                  
-                  <div class =' w-1/8 bg-slate-500  h-1 mt-2 '></div>
-                  <div class="font-thin text-[10px] pt-3">Parcel & Documents Shipping
-                    <span class="ml-3"><i class="fa-solid fa-greater-than fa-xs text-red-600"></i></span>
-                  </div>
-                </div>
-                <div>
-                  <div >
-                    <img src="Images/dx.jpg " class="w-32 h-32">
-                  </div>
-                 
-                  
-                  <div class =' w-1/8 bg-slate-500  h-1 mt-2 '></div>
-                  <div class="font-thin text-[10px] pt-3">Parcel & Documents Shipping
-                    <span class="ml-3"><i class="fa-solid fa-greater-than fa-xs text-red-600"></i></span>
-                  </div>
-                </div>
-               
+            <span class="ml-0.5 mr-3"><i class="fa-solid fa-greater-than fa-rotate-90 fa-xs"></i></span>
+            <div
+              class="accordion-content hidden text-black bg-white absolute mt-[0.5%] pl-3 pr-3 pb-3 left-[-5] hover:text-black"
+            >
+          
+              <div class="pt-3 font-bold text-[14px]">
+                Products & Solutions Overview
+                <span class="ml-3"
+                  ><i class="fa-solid fa-greater-than fa-xs text-red-600"></i
+                ></span>
               </div>
-            
+              <div class="grid grid-cols-3 gap-3">
+                <div>
+                  <div>
+                    <img src="Images/dx.jpg " class="w-32 h-32" />
+                  </div>
+
+                  <div class="w-1/8 bg-slate-500 h-1 mt-2"></div>
+                  <div class="font-thin text-[10px] pt-3">
+                    Parcel & Documents Shipping
+                    <span class="ml-3"
+                      ><i
+                        class="fa-solid fa-greater-than fa-xs text-red-600"
+                      ></i
+                    ></span>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <img src="Images/dx.jpg " class="w-32 h-32" />
+                  </div>
+
+                  <div class="w-1/8 bg-slate-500 h-1 mt-2"></div>
+                  <div class="font-thin text-[10px] pt-3">
+                    Parcel & Documents Shipping
+                    <span class="ml-3"
+                      ><i
+                        class="fa-solid fa-greater-than fa-xs text-red-600"
+                      ></i
+                    ></span>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <img src="Images/dx.jpg " class="w-32 h-32" />
+                  </div>
+
+                  <div class="w-1/8 bg-slate-500 h-1 mt-2"></div>
+                  <div class="font-thin text-[10px] pt-3">
+                    Parcel & Documents Shipping
+                    <span class="ml-3"
+                      ><i
+                        class="fa-solid fa-greater-than fa-xs text-red-600"
+                      ></i
+                    ></span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        
+
           <!-- Our Divisions Accordion -->
           <div class="hover:text-red-600 cursor-pointer">
             Our Divisions
-            <span class="ml-0.5 mr-3">
-              <i class="fa-solid fa-caret-down"></i>
-            </span>
-            <div class="accordion-content hidden bg-white absolute mt-[0.5%] pl-3 pb-3 pr-3">
-              <div class="pt-3 font-bold text-[14px]">Our Divisions <span class="ml-3"><i class="fa-solid fa-greater-than fa-xs text-red-600"></i></span></div>
-              <div class=" grid grid-cols-3 gap-3">
-                <div>
-                  <div >
-                    <img src="Images/dx.jpg " class="w-32 h-32">
-                  </div>
-                 
-                  
-                  <div class =' w-1/8 bg-slate-500  h-1 mt-2 '></div>
-                  <div class="font-thin text-[10px] pt-3">Parcel & Documents Shipping
-                    <span class="ml-3"><i class="fa-solid fa-greater-than fa-xs text-red-600"></i></span>
-                  </div>
-                </div>
-                <div>
-                  <div >
-                    <img src="Images/dx.jpg " class="w-32 h-32">
-                  </div>
-                 
-                  
-                  <div class =' w-1/8 bg-slate-500  h-1 mt-2 '></div>
-                  <div class="font-thin text-[10px] pt-3">Parcel & Documents Shipping
-                    <span class="ml-3"><i class="fa-solid fa-greater-than fa-xs text-red-600"></i></span>
-                  </div>
-                </div>
-                <div>
-                  <div >
-                    <img src="Images/dx.jpg " class="w-32 h-32">
-                  </div>
-                 
-                  
-                  <div class =' w-1/8 bg-slate-500  h-1 mt-2 '></div>
-                  <div class="font-thin text-[10px] pt-3">Parcel & Documents Shipping
-                    <span class="ml-3"><i class="fa-solid fa-greater-than fa-xs text-red-600"></i></span>
-                  </div>
-                </div>
-               
+            <span class="ml-0.5 mr-3"><i class="fa-solid fa-greater-than fa-rotate-90 fa-xs"></i></span>
+            <div
+              class="accordion-content text-black hidden bg-white absolute mt-[0.5%] pl-3 pb-3 pr-3 hover:text-black"
+            >
+              <div class="pt-3 font-bold text-[14px]">
+                Our Divisions
+                <span class="ml-3"
+                  ><i class="fa-solid fa-greater-than fa-xs text-red-600"></i
+                ></span>
               </div>
-            
-          
-              
-            
+              <div class="grid grid-cols-3 gap-3">
+                <div>
+                  <div>
+                    <img src="Images/dx.jpg " class="w-32 h-32" />
+                  </div>
+
+                  <div class="w-1/8 bg-slate-500 h-1 mt-2"></div>
+                  <div class="font-thin text-[10px] pt-3">
+                    Parcel & Documents Shipping
+                    <span class="ml-3"
+                      ><i
+                        class="fa-solid fa-greater-than fa-xs text-red-600"
+                      ></i
+                    ></span>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <img src="Images/dx.jpg " class="w-32 h-32" />
+                  </div>
+
+                  <div class="w-1/8 bg-slate-500 h-1 mt-2"></div>
+                  <div class="font-thin text-[10px] pt-3">
+                    Parcel & Documents Shipping
+                    <span class="ml-3"
+                      ><i
+                        class="fa-solid fa-greater-than fa-xs text-red-600"
+                      ></i
+                    ></span>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <img src="Images/dx.jpg " class="w-32 h-32" />
+                  </div>
+
+                  <div class="w-1/8 bg-slate-500 h-1 mt-2"></div>
+                  <div class="font-thin text-[10px] pt-3">
+                    Parcel & Documents Shipping
+                    <span class="ml-3"
+                      ><i
+                        class="fa-solid fa-greater-than fa-xs text-red-600"
+                      ></i
+                    ></span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        
+
           <!-- Other Non-Accordion Items -->
-          <div class="ml-3 hover:text-red-600 cursor-pointer">Industry Sectors</div>
-          <div class="ml-3 hover:text-red-600 cursor-pointer">Insights & Innovation</div>
+          <div class="ml-3 hover:text-red-600 cursor-pointer">
+            Industry Sectors
+          </div>
+          <div class="ml-3 hover:text-red-600 cursor-pointer">
+            Insights & Innovation
+          </div>
           <div class="ml-3 hover:text-red-600 cursor-pointer">Careers</div>
           <div class="ml-3 hover:text-red-600 cursor-pointer">Press</div>
-        
+
           <!-- About Us Accordion -->
-          <div class="ml-3 hover:text-red-600 cursor-pointer">
+          <div class="ml-3 hover:text-red-600 cursor-pointer  ">
             About Us
             <span class="ml-0.5 mr-3">
-              <i class="fa-solid fa-caret-down"></i>
+              <i class="fa-solid fa-greater-than fa-rotate-90 fa-xs"></i>
             </span>
-            <div class="accordion-content hidden bg-white absolute mt-[0.5%]  ">
-              <div class="grid grid-cols-3 ">
-                <div class="mt-[18%] pl-4">
+          
+            <div
+              class="accordion-content hidden text-black bg-white absolute left-[45%] right-[10%]  mr-[2%]  mt-[0.5%]   hover:text-black"
+            >
+            <div class="grid grid-rows-2 "> 
+              <div>
+              <div class="grid grid-cols-3">
+                <div class="mt-[18%] pl-4 ">
                   <ol>
-                    <li class="font-bold text-[12px] ">
+                    <li class="font-bold text-[12px]">
                       About Us
-                      <span class="ml-1"><i class="fa-solid fa-greater-than fa-xs text-red-600"></i></span>
+                      <span class="ml-1"
+                        ><i
+                          class="fa-solid fa-greater-than fa-xs text-red-600"
+                        ></i
+                      ></span>
                     </li>
-                <li class="font-semibold text-[10px] whitespace-nowrap mt-3">
-                  Global Network
-                  <span class="ml-1"><i class="fa-solid fa-greater-than fa-xs text-red-600"></i></span>
-
-                </li>
-                <li class="font-semibold text-[10px] mt-3">DHL People
-                  <span class="ml-1"><i class="fa-solid fa-greater-than fa-xs text-red-600"></i></span>
-                </li>
-                <li></li></ol></div>
-                <div class="pl-5">
+                    <li
+                      class="font-semibold text-[10px] whitespace-nowrap mt-3"
+                    >
+                      Global Network
+                      <span class="ml-1"
+                        ><i
+                          class="fa-solid fa-greater-than fa-xs text-red-600"
+                        ></i
+                      ></span>
+                    </li>
+                    <li class="font-semibold text-[10px] mt-3">
+                      DHL People
+                      <span class="ml-1"
+                        ><i
+                          class="fa-solid fa-greater-than fa-xs text-red-600"
+                        ></i
+                      ></span>
+                    </li>
+                    <div class="border border-gray-300 mt-2 w-3/4 "></div>
+                    <li class="font-thin text-[10px] mt-3">First Choice <span class="ml-1"
+                      ><i
+                        class="fa-solid fa-greater-than fa-xs text-red-600"
+                      ></i
+                    ></span></li>
+                  </ol>
+                </div>
+                <div class="pl-[5%]">
                   <ol class="mt-[30%]">
-                    <li class="font-semibold text-[10px]">Sustainability
-                      <span class="ml-1"><i class="fa-solid fa-greater-than fa-xs text-red-600"></i></span>
+                    <li class="font-semibold text-[10px]">
+                      Sustainability
+                      <span class="ml-1"
+                        ><i
+                          class="fa-solid fa-greater-than fa-xs text-red-600"
+                        ></i
+                      ></span>
                     </li>
-                    <li class="font-semibold text-[10px] mt-3">Partnerships
-                      <span class="ml-1"><i class="fa-solid fa-greater-than fa-xs text-red-600"></i></span>
+                    <li class="font-semibold text-[10px] mt-3">
+                      Partnerships
+                      <span class="ml-1"
+                        ><i
+                          class="fa-solid fa-greater-than fa-xs text-red-600"
+                        ></i
+                      ></span>
                     </li>
                   </ol>
                 </div>
-                <div></div>
+                <div class="pl-1">
+                  <ol class="mt-[30%]">
+                    <li class="font-semibold text-[10px]">DHL Vision  <span class="ml-1"
+                      ><i
+                        class="fa-solid fa-greater-than fa-xs text-red-600"
+                      ></i
+                    ></span></li>
+                    <li class="font-semibold text-[10px] mt-3">Delivered  <span class="ml-1"
+                      ><i
+                        class="fa-solid fa-greater-than fa-xs text-red-600"
+                      ></i
+                    ></span></li>
+                    <div class="border border-gray-300 mt-1 w-3/4 "></div>
+                    <li class="font-thin text-[10px] mt-3">Globalization  <span class="ml-1"
+                      ><i
+                        class="fa-solid fa-greater-than fa-xs text-red-600"
+                      ></i
+                    ></span></li>
+                    <div class="border border-gray-300 mt-1 w-3/4 "></div>
+                    <li class="font-thin text-[10px] mt-3">Digitilization <span class="ml-1"
+                      ><i
+                        class="fa-solid fa-greater-than fa-xs text-red-600"
+                      ></i
+                    ></span></li>
+                    <div class="border border-gray-300 mt-1 w-3/4 "></div>
+                    <li class="font-thin text-[10px] mt-3">Sustainability  <span class="ml-1"
+                      ><i
+                        class="fa-solid fa-greater-than fa-xs text-red-600"
+                      ></i
+                    ></span></li>
+                 
+                    <div class="border border-gray-300 mt-1 w-3/4 "></div>
+                    <li class="font-thin text-[10px] mt-3">Ecommerce  <span class="ml-1"
+                      ><i
+                        class="fa-solid fa-greater-than fa-xs text-red-600"
+                      ></i
+                    ></span></li>
+
+                  </ol>
+
+                </div>
+
+
+          <div class="grid grid-cols-2 gap-5 ">
+          <div class="font-semibold text-[12px]">Strategy 2025 <span class="ml-1"
+            ><i
+              class="fa-solid fa-greater-than fa-xs text-red-600"
+            ></i
+          ></span></div>
+          <div>
+            <ol>
+              <li class="font-semibold text-[12px]">Brexit <span class="ml-1"
+                ><i
+                  class="fa-solid fa-greater-than fa-xs text-red-600"
+                ></i
+              ></span></li>
+              <div class="border border-gray-300 mt-1 w-3/4 "></div>
+          
+              <li class="font-thin text-[10px] mt-3">DHL Global Forwarding and Brexit <span class="ml-1"
+                ><i
+                  class="fa-solid fa-greater-than fa-xs text-red-600"
+                ></i
+              ></span></li>
+              <div class="border border-gray-300 mt-1 w-3/4 "></div>
+              <li class="font-thin text-[10px] mt-3">DHL Supply chain and Brexit <span class="ml-1"
+                ><i
+                  class="fa-solid fa-greater-than fa-xs text-red-600"
+                ></i
+              ></span></li>
+            </ol>
+          </div>
+
+        </div>
 
               </div>
             </div>
           </div>
         </div>
-        
-       
-        
+     
+      </div>
+      <!-- <div class=" flex  flex-1  items-center justify-end">
+        <div class="font-medium text-red-500 relative h-full cursor-pointer items-center p-4">
+          Mimo
+        </div>
+
+      </div> -->
+
+
+     
       </nav>
+
+
 
       <div
         style="background-image: url(Images/dhlperson.jpg)"
@@ -235,14 +485,14 @@
         </div>
 
         <div class="flex items-center ml-[30%] mt-5 pb-5">
-          <div class="relative">
+          <div >
             <input
               type="text"
-              class="border border-gray-300 rounded-sm font-extralight text-[9px] p-4 placeholder-gray-400 px-12 py-3 mr-[-5%]"
+              class="border border-gray-300 rounded-sm font-extralight text-[9px] p-4 placeholder-gray-400 pr-12 pl-6 py-3 mr-[-5%]"
               placeholder="Enter your tracking number(s)"
             />
             <button
-              class="text-white text-[12px] bg-red-500 p-1 ml-[-15%] rounded-sm"
+              class="text-white text-[12px] bg-red-500 p-1 ml-[-15%] rounded-r-sm"
             >
               Track
             </button>
@@ -255,7 +505,7 @@
           class="bg-slate-100 w-1/4 rounded-sm p-2 text-center hover:bg-white shadow-md pt-8"
         >
           <div><i class="fa-solid fa-calendar text-red-500"></i></div>
-          <span class="font-semibold">Ship Now</span>
+          <span class="font-semibold text-[small]">Ship Now</span>
           <div class="font-light text-[10px] whitespace-nowrap">
             Find the right service
           </div>
@@ -264,18 +514,18 @@
           class="bg-slate-100 w-1/4 rounded-sm p-2 text-center hover:bg-white shadow-md pt-8"
         >
           <div><i class="fa-solid fa-book text-red-500"></i></div>
-          <span class="font-semibold">Get a Quote</span>
+          <span class="font-semibold text-[small]">Get a Quote</span>
           <div class="font-light text-[10px] whitespace-nowrap">
-            Estimate cost to share and compare
+            Estimate cost to share and<br> compare
           </div>
         </div>
         <div
-          class="bg-slate-100 w-1/4 rounded-sm p-2 text-center hover:bg-white shadow-md pt-8"
+          class="bg-slate-100 w-1/4  rounded-sm p-2 text-center  hover:bg-white shadow-md pt-8 mt-[-2%]"
         >
           <div><i class="fa-regular fa-building text-red-500"></i></div>
-          <span class="font-semibold">DHL for Business</span>
+          <span class="font-semibold text-[small]">DHL for Business</span>
           <div class="font-light text-[10px]">
-            Shipping regularly? Request a business account and profit from
+            Shipping regularly? Request a <br>business account and profit from<br>
             exclusive benefits
           </div>
         </div>
@@ -283,9 +533,9 @@
           class="bg-slate-100 w-1/4 rounded-sm p-2 text-center hover:bg-white shadow-md pt-8"
         >
           <div><i class="fa-solid fa-user text-red-500"></i></div>
-          <span class="font-semibold">Portal Login</span>
+          <span class="font-semibold text-[small]">Portal Login</span>
           <div class="font-light text-[10px]">
-            Our divisions offer different online tools for your shipping and
+            Our divisions offer different online <br>tools for your shipping and<br>
             logistics needs
           </div>
         </div>
@@ -299,378 +549,375 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-5">
-        <div>
+      <div class="border border-slate-400 rounded-sm p-7">
+        <div class="grid grid-cols-6 gap-2">
+          <div >
+            <div >
+              <i class="fa-solid fa-box text-red-500"></i>
+            </div>
+            <div class="font-semibold text-[12px] ">
+              Documents & Parcel
+            </div>
+            <div class="font-thin text-[10px]">
+              Domestics and International
+              <span class="pl-2"> <i class="fa-solid fa-greater-than fa-xs text-red-500"></i></span>
+            </div>
+          </div>
+          <div class=" bg-slate-400  w-2 "></div>
           <div>
-            <i class="fa-solid fa-box text-red-500"></i>
-           
+            <div>
+              <i class="fa-solid fa-jet-fighter text-red-600"></i>
+            </div>
+            <div class="font-semibold text-[12px]">Air Freight</div>
+            <div class="font-thin text-[10px]">International <span class="pl-2"> <i class="fa-solid fa-greater-than fa-xs text-red-500"></i></span> </div>
+            <div class="font-thin text-[10px]">
+              Same Day <span class="pl-2"> <i class="fa-solid fa-greater-than fa-xs text-red-500"></i></span>
+            </div>
           </div>
-          <div class="font-semibold text-[12px]">
-            Documents & Parcel
-          </div>
-          <div class="font-thin text-[10px]">
-            Domestics and International
-            <span class="pl-2"> <i class="fa-solid fa-greater-than fa-xs text-red-500"></i></span>
-          </div>
-        </div>
-        <div >
           <div>
-            <i class="fa-solid fa-jet-fighter text-red-600"></i>
+            <div><i class="fa-solid fa-ferry text-red-600"></i></div>
+            <div class="font-semibold text-[12px]">Ocean Freight</div>
+            <div class="font-thin text-[10px]">International <span class="pl-2"> <i class="fa-solid fa-greater-than fa-xs text-red-500"></i></span> </div>
           </div>
-          <div class="font-semibold text-[12px]">Air Freight</div>
-          <div class="font-thin text-[10px]">International <span class="pl-2"> <i class="fa-solid fa-greater-than fa-xs text-red-500"></i></span> </div>
-          <div class="font-thin text-[10px]">
-            Same Day <span class="pl-2"> <i class="fa-solid fa-greater-than fa-xs text-red-500"></i></span>
+          <div>
+            <div><i class="fa-solid fa-bus text-red-600"></i></div>
+            <div class="font-semibold text-[12px]">Road Freight</div>
+            <div class="font-thin text-[10px]">International <span class="pl-2"> <i class="fa-solid fa-greater-than fa-xs text-red-500"></i></span> </div>
+          </div>
+          <div>
+            <div><i class="fa-solid fa-train text-red-600"></i></div>
+            <div class="font-semibold text-[12px]">Rall Freight</div>
+            <div class="font-thin text-[10px]">Between Europe and Asia <span class="pl-2"> <i class="fa-solid fa-greater-than fa-xs text-red-500"></i></span></div>
+            <div class="font-thin text-[10px]">Intra Europe <span class="pl-2"> <i class="fa-solid fa-greater-than fa-xs text-red-500"></i></span></div>
           </div>
         </div>
-        <div>
-          <div><i class="fa-solid fa-ferry text-red-600"></i></div>
-          <div class="font-semibold text-[12px]">Ocean Freight</div>
-          <div class="font-thin text-[10px]">International <span class="pl-2"> <i class="fa-solid fa-greater-than fa-xs text-red-500"></i></span> </div>
-        </div>
-        <div>
-          <div><i class="fa-solid fa-bus text-red-600"></i></div>
-          <div class="font-semibold text-[12px]">Road Freight</div>
-          <div class="font-thin text-[10px]">International <span class="pl-2"> <i class="fa-solid fa-greater-than fa-xs text-red-500"></i></span> </div>
-        </div>
-        <div>
-          <div><i class="fa-solid fa-train text-red-600"></i></div>
-          <div class="font-semibold text-[12px]">Rall Freight</div>
-          <div class="font-thin text-[10px]">Between Europe and Asia <span class="pl-2"> <i class="fa-solid fa-greater-than fa-xs text-red-500"></i></span></div>
-          <div class="font-thin text-[10px]">Intra Europe <span class="pl-2"> <i class="fa-solid fa-greater-than fa-xs text-red-500"></i></span></div>
-        </div>
-
       </div>
-     
-      
+        <div
+          style="
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+            padding-bottom: 8px;
+            margin-top: 8%;
+          "
+        >
+          Logistics Solutions
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-left: 8%;
+          "
+        >
+          <div style="text-align: center">
+            <img src="Images/Dl1.jpg" alt="Image 1" />
+            <div
+              style="  background-color: #ffffff; padding: 10px  "
+              class="shadow  border-2 opacity-100 "
 
+            >
+              <div style="font-weight: bold; font-size: 12px">
+                Warehouse Solutions
+              </div>
+              <div class="text-red-600 text-[10px] pt-16">
+                Warehouse for Small and Medium Businesses
+                <span class="ml-2"
+                  ><i class="fa-solid fa-greater-than fa-xs text-red"></i
+                ></span>
+              </div>
+              <div class="text-red-600 text-[10px] pt-4 ">
+                Transport and Distribution
+                <span class="ml-2"
+                  ><i class="fa-solid fa-greater-than fa-xs text-red"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center">
+            <img src="Images/dl2.jpg" alt="Image 2" />
+            <div
+              style="background-color: #ffffff; padding: 10px"
+              class="shadow  border-2 opacity-100"
+            >
+              <div style="font-weight: bold; font-size: 12px">
+                Transportation Management for Small and Medium Businesses
+              </div>
+              <div class="text-red-600 text-[10px] pt-10">
+                Transporting Management for Enterprises
+                <span class="ml-2"
+                  ><i class="fa-solid fa-greater-than fa-xs text-red"></i
+                ></span>
+              </div>
+              <div class="text-red-600 text-[10px] pt-5">
+                Warehouse for Enterprises
+                <span class="ml-2"
+                  ><i class="fa-solid fa-greater-than fa-xs text-red"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center">
+            <img src="Images/dl3.jpg" alt="Image 3" />
 
+            <div
+              style="background-color: #ffffff; padding: 10px"
+              class="shadow  border-2 opacity-100"
+            >
+              <div
+                style="font-weight: bold; font-size: 12px; padding-bottom: 6rem"
+              >
+                Contract Logistics
+              </div>
+              <div class="text-red-600 text-[10px]">
+                Find Out More About Contract Logistics
+                <span class="ml-2"
+                  ><i class="fa-solid fa-greater-than fa-xs text-red"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <div class="text-red-600 font-bold text-[18px] text-center pt-10">
+          IMPORTANT INFORMATION
+        </div>
+        <div class="font-semibold text-[12px] pt-5 text-center">
+          Service bulletins keep you up to date with events that might affect
+          our high service standards
+        </div>
+        <div class="text-red-600 underline text-[10px] ml-[18%] mt-5">
+          SMS-Scam “Download Our Application to Track Your Parcel”
+        </div>
 
-      <div
-        style="
-          text-align: center;
-          font-weight: bold;
-          font-size: 14px;
-          padding-bottom: 8px;
-        "
-      >
-        Logistics Solutions
-      </div>
-      <div
-        style="
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
-          margin-left: 8%;
-        "
-      >
-        <div style="text-align: center">
-          <img
-            src="Images/dhl6.jpeg"
-            alt="Image 1"
-            style="width: 100%; max-width: 100%; border-radius: 8px"
-          />
+        <div class="border-t border-gray-300 mt-5 w-1/2 mx-auto"></div>
+        <div class="grid grid-rows-3 pt-5">
           <div
             style="
-              background-color: #ffffff;
-              border: 2px solid whitesmoke;
-              border-radius: 8px;
-              padding: 10px;
+              background-image: url(Images/dl4.jpg);
+              background-size: cover;
+              background-position: center;
             "
           >
-            <div style="font-weight: bold; font-size: 12px">
-              Warehouse Solutions
-            </div>
-            <div class="text-red-600 text-[10px] pt-16">
-              Warehouse for Small and Medium Businesses
-              <span class="ml-2"
-                ><i class="fa-solid fa-greater-than fa-xs text-red"></i
-              ></span>
-            </div>
-            <div class="text-red-600 text-[10px] pt-4">
-              Transport and Distribution
-              <span class="ml-2"
-                ><i class="fa-solid fa-greater-than fa-xs text-red"></i
-              ></span>
+            <div class="w-1/4 bg-slate-200 pl-3 pr-3 h-full opacity-50">
+              <span class="font-bold text-[14px]">Green Logistics</span>
+              <p class="font-thin text-[10px] bg-slate-200 bg-transparent pt-3">
+                Sustainable business begins with sustainable supply chains. As
+                the pioneer of green logistics, we have an unmatched portfolio
+                of green logistics solutions. Together with our customers
+                worldwide, we’re minimizing emissions without compromising
+                operations. Find out what we have to offer, why we’re committed
+                to sustainability, and how our industry is helping deliver a
+                sustainable future.
+              </p>
+              <button
+                class="text-white bg-red-600 p-1 text-center font-bold text-[12px] ml-[2%] rounded-r-md mt-5 mb-5"
+              >
+                Learn More
+              </button>
             </div>
           </div>
-        </div>
-        <div style="text-align: center">
-          <img
-            src="Images/dhl9.jpeg"
-            alt="Image 2"
-            style="width: 100%; max-width: 100%; border-radius: 8px"
-          />
           <div
             style="
-              background-color: #ffffff;
-              border: 2px solid whitesmoke;
-              border-radius: 8px;
-              padding: 10px;
-            "
-          >
-            <div style="font-weight: bold; font-size: 12px">
-              Transportation Management for Small and Medium Businesses
-            </div>
-            <div class="text-red-600 text-[10px] pt-10">
-              Transporting Management for Enterprises
-              <span class="ml-2"
-                ><i class="fa-solid fa-greater-than fa-xs text-red"></i
-              ></span>
-            </div>
-            <div class="text-red-600 text-[10px] pt-5">
-              Warehouse for Enterprises
-              <span class="ml-2"
-                ><i class="fa-solid fa-greater-than fa-xs text-red"></i
-              ></span>
-            </div>
-          </div>
-        </div>
-        <div style="text-align: center">
-          <img
-            src="Images/dhl4.jpeg"
-            alt="Image 3"
-            style="width: 100%; max-width: 100%; border-radius: 8px"
-          />
+              background-image: url(Images/dl5.jpg);
+              background-size: cover;
+              background-position: center;
 
-          <div
-            style="
-              background-color: #ffffff;
-              border: 2px solid whitesmoke;
-              border-radius: 8px;
-              padding: 10px;
+              margin-top: 20px;
             "
           >
             <div
-              style="font-weight: bold; font-size: 12px; padding-bottom: 6rem"
+              class="h-full w-1/4 bg-slate-200 ml-[75%] pl-3 pr-3 opacity-50"
             >
-              Contract Logistics
+              <span class="font-bold text-[14px]">
+                Insights and Innovation</span
+              >
+              <p class="font-thin text-[10px] pt-3">
+                To enable collaboration, the company brings together customers,
+                research and academic institutions, industry partners, and
+                logistics experts within the DHL business divisions. As a
+                thought leader in the logistics industry, DHL structurally
+                invests in trend research and solution development.
+              </p>
+              <button
+                class="text-white bg-red-600 p-1 text-center font-bold text-[12px] ml-[2%] rounded-md mt-5 mb-5"
+              >
+                Learn More
+              </button>
             </div>
-            <div class="text-red-600 text-[10px]">
-              Find Out More About Contract Logistics
-              <span class="ml-2"
-                ><i class="fa-solid fa-greater-than fa-xs text-red"></i
-              ></span>
+          </div>
+
+          <div
+            style="
+              background-image: url(Images/dl6.jpg);
+              background-size: cover;
+              background-position: center;
+
+              margin-top: 20px;
+            "
+          >
+            <div class="w-1/4 bg-slate-200 pl-3 pr-3 h-full opacity-50">
+              <span class="font-bold text-[14px]"> Our Divisions</span>
+              <p class="font-thin text-[10px] pt-3">
+                DHL connects people in over 220 countries and territories
+                worldwide. Driven by the power of more than 600,000 employees,
+                we deliver integrated services and tailored solutions for
+                managing and transporting letters, goods and information.
+              </p>
+
+              <button
+                class="text-white bg-red-600 p-1 text-center font-bold text-[12px] ml-[2%] rounded-md mt-5 mb-5"
+              >
+                Learn More
+              </button>
             </div>
           </div>
         </div>
+
+        <div class="sub-footer grid grid-cols-4 mt-10">
+          <div>
+            <ol>
+              <li class="text-red-600 font-semibold text-[12px]">
+                Help Center
+
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                Contact Us
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                Customer Portal Logins
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                Digital Partners and Integrations
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                Developer Portal
+              </li>
+            </ol>
+          </div>
+          <div>
+            <ol>
+              <li class="font-semibold text-[12px]">Our Divisions</li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                Post and Paket Deutschland
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                DHL Express
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                DHL Global Forwarding
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                DHL Freight
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                DHL Supply Chain
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                DHL ecommerce Solutions
+              </li>
+            </ol>
+          </div>
+          <div>
+            <ol>
+              <li class="font-semibold text-[12px]">Industry Sectors</li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                Auto-mobilty
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                Chemicals
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                Consumer
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">Energy</li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                Engineering and Manufacturing
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                Life Sciences and Healthcare
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                Public Sector
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">Retail</li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                Technology
+              </li>
+            </ol>
+          </div>
+          <div>
+            <ol>
+              <li class="font-semibold text-[12px]">Company Information</li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                About DHL
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                Delivered
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                Careers
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                Press Center
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                Sustainability
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                Insights and Innovation
+              </li>
+              <li class="font-thin text-[12px] mt-2 hover:underline">
+                Official Logistics Partners
+              </li>
+            </ol>
+          </div>
+        </div>
+        <footer class="bg-slate-50">
+          <div class="flex items-center">
+            <div class="pt-5 ml-10">
+              <img class="w-10" h="10" src="Images/dh.png" />
+            </div>
+            <div class="font-semibold ml-[55%]">Follow Us</div>
+          </div>
+          <div class="ml-[65%] flex">
+            <div><i class="fa-brands fa-youtube text-gray-400"></i></div>
+            <div class="pl-5">
+              <i class="fa-brands fa-facebook text-gray-400"></i>
+            </div>
+            <div class="pl-5">
+              <i class="fa-brands fa-linkedin text-gray-400"></i>
+            </div>
+            <div class="pl-5">
+              <i class="fa-brands fa-instagram text-gray-400"></i>
+            </div>
+          </div>
+          <div>
+            <ol class="flex whitespace-nowrap pt-5">
+              <li class="font-light text-[8px] ml-10">Fraud Awareness</li>
+              <li class="font-light text-[8px] pl-8">Legal Notice</li>
+              <li class="font-light text-[8px] pl-8">Terms of Use</li>
+              <li class="font-light text-[8px] pl-8">Privacy Notice</li>
+              <li class="font-light text-[8px] pl-8">Dispute Resolution</li>
+              <li class="font-light text-[8px] pl-8">Addition Information</li>
+            </ol>
+          </div>
+          <div class="font-light text-[8px] pt-4 ml-10">Cookie Settings</div>
+          <div class="font-light text-[8px] text-center">
+            2023 @-all rights reserved
+          </div>
+        </footer>
       </div>
-
-      <div class="text-red-600 font-bold text-[18px] text-center pt-10">
-        IMPORTANT INFORMATION
-      </div>
-      <div class="font-semibold text-[12px] pt-5 text-center">
-        Service bulletins keep you up to date with events that might affect our
-        high service standards
-      </div>
-      <div class="text-red-600 underline text-[10px] ml-[18%] mt-5">
-        SMS-Scam “Download Our Application to Track Your Parcel”
-      </div>
-
-      <div class="border-t border-gray-300 mt-5 w-1/2 mx-auto "></div>
-      <div class="grid grid-rows-3 pt-5">
-        <div
-          style="
-            background-image: url(Images/dhly.jpeg);
-            background-size: cover;
-            background-position: center;
-            
-           
-          "
-        >
-          <div class =' w-1/4 bg-slate-200 pl-3 pr-3 h-full'>
-            <span class="font-bold text-[14px] "
-              >Green Logistics</span
-            >
-            <p class="font-thin text-[10px]   bg-slate-200 bg-transparent pt-3">
-              Sustainable business begins with sustainable supply chains. As the
-              pioneer of green logistics, we have an unmatched portfolio of
-              green logistics solutions. Together with our customers worldwide,
-              we’re minimizing emissions without compromising operations. Find
-              out what we have to offer, why we’re committed to sustainability,
-              and how our industry is helping deliver a sustainable future.
-            </p>
-            <button class="text-white bg-red-600 p-1 text-center  font-bold text-[12px] ml-[2%] rounded-md mt-5 mb-5">Learn More</button>
-          </div>
-          </div>
-          <div  style="
-          background-image: url(Images/ddl.jpg);
-          background-size: cover;
-          background-position: center;
-         
-          margin-top: 20px;
-         
-        ">
-        <div class="h-full w-1/4 bg-slate-200 ml-[75%] pl-3 pr-3"> 
-          <span class="font-bold text-[14px]"> Insights and Innovation</span>
-          <p class="font-thin text-[10px] pt-3" >To enable collaboration, the company brings together customers, research and academic institutions, industry partners, and logistics experts within the DHL business divisions. As a thought leader in the logistics industry, DHL structurally invests in trend research and solution development.</p>
-          <button class="text-white bg-red-600 p-1 text-center  font-bold text-[12px] ml-[2%] rounded-md mt-5 mb-5">Learn More</button>
-        
-        </div>
-
-          </div>
-
-          <div  style="
-          background-image: url(Images/dd.jpg);
-          background-size: cover;
-          background-position: center;
-       
-          margin-top: 20px;
-         
-        ">
-        <div class=" w-1/4 bg-slate-200 pl-3 pr-3 h-full"> 
-          <span class="font-bold text-[14px]"> Our Divisions</span>
-          <p class="font-thin text-[10px] pt-3" >DHL connects people in over 220 countries and territories worldwide. Driven by the power of more than 600,000 employees, we deliver integrated services and tailored solutions for managing and transporting letters, goods and information.
-          </p>
-
-
-          <button class="text-white bg-red-600 p-1 text-center  font-bold text-[12px] ml-[2%] rounded-md mt-5 mb-5">Learn More</button>
-        
-        </div>
-
-          </div>
-         
-        </div>
-        
-    
-
-      <div class="sub-footer grid grid-cols-4 mt-10">
-        <div>
-          <ol>
-            <li class="text-red-600 font-semibold text-[12px]">Help Center</li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              Contact Us
-            </li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              Customer Portal Logins
-            </li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              Digital Partners and Integrations
-            </li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              Developer Portal
-            </li>
-          </ol>
-        </div>
-        <div>
-          <ol>
-            <li class="font-semibold text-[12px]">Our Divisions</li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              Post and Paket Deutschland
-            </li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              DHL Express
-            </li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              DHL Global Forwarding
-            </li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              DHL Freight
-            </li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              DHL Supply Chain
-            </li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              DHL ecommerce Solutions
-            </li>
-          </ol>
-        </div>
-        <div>
-          <ol>
-            <li class="font-semibold text-[12px]">Industry Sectors</li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              Auto-mobilty
-            </li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              Chemicals
-            </li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">Consumer</li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">Energy</li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              Engineering and Manufacturing
-            </li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              Life Sciences and Healthcare
-            </li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              Public Sector
-            </li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">Retail</li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              Technology
-            </li>
-          </ol>
-        </div>
-        <div>
-          <ol>
-            <li class="font-semibold text-[12px]">Company Information</li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              About DHL
-            </li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              Delivered
-            </li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">Careers</li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              Press Center
-            </li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              Sustainability
-            </li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              Insights and Innovation
-            </li>
-            <li class="font-thin text-[12px] mt-2 hover:underline">
-              Official Logistics Partners
-            </li>
-          </ol>
-        </div>
-      </div>
-      <footer class="bg-slate-50">
-        <div class="flex items-center">
-          <div class="pt-5 ml-10">
-            <img class="w-10" h="10" src="Images/dh.png" />
-          </div>
-          <div class="font-semibold ml-[55%]">Follow Us</div>
-        </div>
-        <div class="ml-[65%] flex">
-          <div><i class="fa-brands fa-youtube text-gray-400"></i></div>
-          <div class="pl-5">
-            <i class="fa-brands fa-facebook text-gray-400"></i>
-          </div>
-          <div class="pl-5">
-            <i class="fa-brands fa-linkedin text-gray-400"></i>
-          </div>
-          <div class="pl-5">
-            <i class="fa-brands fa-instagram text-gray-400"></i>
-          </div>
-        </div>
-        <div>
-          <ol class="flex whitespace-nowrap pt-5">
-            <li class="font-light text-[8px] ml-10">Fraud Awareness</li>
-            <li class="font-light text-[8px] pl-8">Legal Notice</li>
-            <li class="font-light text-[8px] pl-8">Terms of Use</li>
-            <li class="font-light text-[8px] pl-8">Privacy Notice</li>
-            <li class="font-light text-[8px] pl-8">Dispute Resolution</li>
-            <li class="font-light text-[8px] pl-8">Addition Information</li>
-          </ol>
-        </div>
-        <div class="font-light text-[8px] pt-4 ml-10">Cookie Settings</div>
-        <div class="font-light text-[8px] text-center">
-          2023 @-all rights reserved
-        </div>
-      </footer>
-    </div>
     </div>
     <script>
       // JavaScript to toggle accordion content
-      const accordionItems = document.querySelectorAll('.accordion-content');
-      
-      accordionItems.forEach(item => {
+      const accordionItems = document.querySelectorAll(".accordion-content");
+
+      accordionItems.forEach((item) => {
         const parent = item.parentElement;
-        parent.addEventListener('click', () => {
-          item.classList.toggle('hidden');
+        parent.addEventListener("click", () => {
+          item.classList.toggle("hidden");
         });
       });
     </script>
